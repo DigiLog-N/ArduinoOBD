@@ -4,11 +4,11 @@ Erigo notes about this repository
 We forked Stanley Huang's ArduinoOBD repository from https://github.com/stanleyhuangyc/ArduinoOBD
 
 This is code to work on the Freematics devices. We have the Mega Kit with Bluno Mega 2560 Arduino board:
-https://freematics.com/store/index.php?route=product/product&path=24&product_id=58
-https://freematics.com/pages/products/arduino-telematics-kit-3/
-https://freematics.com/pages/products/arduino-telematics-kit-3/developers-guide/
+* https://freematics.com/store/index.php?route=product/product&path=24&product_id=58
+* https://freematics.com/pages/products/arduino-telematics-kit-3/
+* https://freematics.com/pages/products/arduino-telematics-kit-3/developers-guide/
 
-In our local copy of the ArduinoOBD repository, we only kept the "megaloggerHD" application, which runs on our Mega Kit.
+In our local copy of the ArduinoOBD repository, we only kept the "megaloggerHD" application (which runs on our Mega Kit) and the "libraries" files. For compiling the Arduino megaloggerHD application, the subfolders under libraries should be copied to your "<user>\Documents\Arduino\libraries" folder (for example, C:\Users\johnw\Documents\Arduino\libraries).
 
 One issue for us to addresss in this code is that the data output format from the Arduino is the "Data Logging" format shown at the bottom of https://freematics.com/pages/products/arduino-telematics-kit-3/developers-guide/. In this format, each PID/data channel is on its own line of output. It would be good to transition from this to a real CSV output that we could use for processing with CloudTurbine.
 
