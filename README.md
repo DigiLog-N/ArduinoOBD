@@ -1,3 +1,21 @@
+Erigo notes about this repository
+=================================
+
+We forked Stanley Huang's ArduinoOBD repository from https://github.com/stanleyhuangyc/ArduinoOBD
+
+This is code to work on the Freematics devices. We have the Mega Kit with Bluno Mega 2560 Arduino board:
+https://freematics.com/store/index.php?route=product/product&path=24&product_id=58
+https://freematics.com/pages/products/arduino-telematics-kit-3/
+https://freematics.com/pages/products/arduino-telematics-kit-3/developers-guide/
+
+In our local copy of the ArduinoOBD repository, we only kept the "megaloggerHD" application, which runs on our Mega Kit.
+
+One issue for us to addresss in this code is that the data output format from the Arduino is the "Data Logging" format shown at the bottom of https://freematics.com/pages/products/arduino-telematics-kit-3/developers-guide/. In this format, each PID/data channel is on its own line of output. It would be good to transition from this to a real CSV output that we could use for processing with CloudTurbine.
+
+The Bluno Mega 2560 board is made by DFRobot (https://wiki.dfrobot.com/Bluno_Mega_2560__SKU_DFR0323_). Android code for communicating with the Bluetooth connection on this Bluno Mega 2560 board is described at https://wiki.dfrobot.com/Bluno_SKU_DFR0267#Bluno_Basic_Demo. We have a modified version of this code in our BlunoBasicDemo repository (https://github.com/DigiLog-N/BlunoBasicDemo).
+
+The rest of the notes here are from Stanley's original README file.
+
 Arduino OBD-II Adapter Library & Sketches
 =========================================
 
