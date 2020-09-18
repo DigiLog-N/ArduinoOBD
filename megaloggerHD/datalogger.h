@@ -156,7 +156,7 @@ public:
     {
         char buf[16];
         byte n = translatePIDName(pid, buf);
-        byte len = sprintf(buf + n, "%d", value) + n;
+        byte len = sprintf(buf + n, "%d\n", value) + n;
 #if STREAM_FORMAT == FORMAT_BIN
         LOG_DATA_COMM ld = {dataTime, pid, 1, 0, value};
         ld.checksum = getChecksum((char*)&ld, 12);
@@ -170,7 +170,7 @@ public:
     {
         char buf[20];
         byte n = translatePIDName(pid, buf);
-        byte len = sprintf(buf + n, "%ld", value) + n;
+        byte len = sprintf(buf + n, "%ld\n", value) + n;
 #if ENABLE_DATA_OUT
 #if STREAM_FORMAT == FORMAT_BIN
         LOG_DATA_COMM ld = {dataTime, pid, 1, 0, value};
@@ -186,7 +186,7 @@ public:
     {
         char buf[20];
         byte n = translatePIDName(pid, buf);
-        byte len = sprintf(buf + n, "%lu", value) + n;
+        byte len = sprintf(buf + n, "%lu\n", value) + n;
 #if STREAM_FORMAT == FORMAT_BIN
         LOG_DATA_COMM ld = {dataTime, pid, 1, 0, value};
         ld.checksum = getChecksum((char*)&ld, 12);
@@ -200,7 +200,7 @@ public:
     {
         char buf[24];
         byte n = translatePIDName(pid, buf);
-        byte len = sprintf(buf + n, "%d,%d,%d", values[0], values[1], values[2]) + n;
+        byte len = sprintf(buf + n, "%d,%d,%d\n", values[0], values[1], values[2]) + n;
 #if STREAM_FORMAT == FORMAT_BIN
         LOG_DATA_COMM ld = {dataTime, pid, 3, 0, {values[0], values[1], values[2]}};
         ld.checksum = getChecksum((char*)&ld, 20);
